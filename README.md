@@ -1,2 +1,1 @@
-# carepet-v2
-An app for responsible pet owners who want to track their pet´s wellness through AI. 
+Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
