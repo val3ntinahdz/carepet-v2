@@ -10,4 +10,37 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :pets do
+    resources :vaccinations, only: %[new create]
+    resources :allergies, only: %[new create]
+    resources :conditions, only: %[new create]
+    resources :tranings, only: %[index new create]
+    resources :nutritions, only: %[index new create]
+  end
+
+  resources :vaccinations, only: %[edit update destroy]
+  resources :allergies, only: %[edit update destroy]
+  resources :conditions, only: %[edit update destroy]
+
+  resources :vaccines, except: %i[new create]
+  resources :conditions, except: %i[new create]
+  resources :allergens, except: %i[new create]
+  resources :trainings, except: %i[index new create]
+  resources :nutritions, except: %i[index new create]
+
+  resources :veterinaries do
+    resources :services, only: %[new create]
+  end
+
+  resources :services, except: %[new create] do
+    resources :appointments, only: %[new create]
+  end
+
+  resources :appointments, except: %[new create] do
+    member do
+      patch 'update_status'
+    end
+  end
+
+  get 'profile', to: 'users#profile', as: :profile
 end
