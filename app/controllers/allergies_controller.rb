@@ -2,6 +2,10 @@ class AllergiesController < ApplicationController
   before_action :set_allergy, only: %i[show edit update destroy]
   before_action :set_pet, only: %i[new create]
 
+  def index
+    @allergies = Allergy.all
+  end
+
   def show; end
 
   def new
@@ -30,7 +34,7 @@ class AllergiesController < ApplicationController
 
   def destroy
     @allergy.destroy
-    redirect_to pet_path(@allergy.pet)
+    redirect_to pet_path(@pet)
   end
 
   private
