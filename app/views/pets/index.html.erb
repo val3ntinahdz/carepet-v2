@@ -1,0 +1,11 @@
+<div class='justify-content-between mt-3'>
+  <h4 class='p-5'>My Pets</h4>
+</div>
+<div class='card m-4 p-2' style="width: 18rem;">
+  <% @pets.each do |pet| %>
+    <%= link_to pet_path(pet) do %>
+      <h5 class="card-title px-3 pt-1"><%= pet.name %></h5>
+    <% end %>
+    <p id="breed" class="pb-3"><%= pet.breed %></p>
+  <% end %>
+</div>

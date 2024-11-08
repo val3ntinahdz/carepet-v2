@@ -6,7 +6,7 @@ class PetsController < ApplicationController
   end
 
   def show
-    @vaccinations = @pet.vaccination
+    @vaccinations = @pet.vaccinations
     @allergies = @pet.allergies
     @conditions = @pet.conditions
   end
