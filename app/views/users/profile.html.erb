@@ -1,0 +1,23 @@
+<div class='profile-container'>
+ <div class='profile-header'>
+  <h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
+ </diV>
+ <hr>
+ <div class='profile-info'>
+  <section>
+    <p>Email: <%= current_user.email %></p>
+    <p>Address: <%= current_user.address %></p>
+    <p>Email: <%= current_user.email %></p>
+    <p>Phone: <%= current_user.phone_number %></p>
+  </section>
+ </div>
+ <% if @veterinary.present? %>
+  <h4>Professional Info</h4>
+  <hr>
+  <p>DNI: <%= current_user.veterinary.dni %></p>
+  <p>specialization: <%= current_user.veterinary.specialization %></p>
+  <div class="d-flex justify-content-evenly mt-3">
+    <%= link_to "See my services", "/services", class: 'btn btn-primary' %>
+  </div>
+ <% end%>
+</div>
