@@ -11,4 +11,5 @@ class Pet < ApplicationRecord
   has_many :veterinaries, through: :services
   has_many :vaccinations, dependent: :destroy
   has_many :vaccines, through: :vaccinations
+  has_one_attached :photo
 end
