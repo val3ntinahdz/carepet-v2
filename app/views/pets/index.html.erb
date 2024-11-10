@@ -3,6 +3,9 @@
 </div>
 <div class='card m-4 p-2' style="width: 18rem;">
   <% @pets.each do |pet| %>
+    <% if pet.photo.attached? %>
+      <%= image_tag url_for(pet.photo), alt: "Avatar de la mascota" %>
+    <% end %>
     <%= link_to pet_path(pet) do %>
       <h5 class="card-title px-3 pt-1"><%= pet.name %></h5>
     <% end %>
