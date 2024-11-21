@@ -1,1 +1,4 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+Comprehensive Web App for Pet Owners to track their pet´s health through AI and find near veterinary services.
+The platform will include AI integration through OPENAI API and will include 3D graphics for pet's avatars.
+-- Currently working on the back-end and GPT Training. 
+
