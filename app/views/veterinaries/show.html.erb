@@ -1,0 +1,18 @@
+<div class="veterinary-container mt-3 p-5">
+  <h1><%= @veterinary.user.first_name %> <%= @veterinary.user.last_name %></h1>
+  <hr>
+  <p><strong>Specialization: </strong><%= @veterinary.specialization %></p>
+  <p><strong>Phone Number: </strong><%= @veterinary.user.phone_number %></p>
+  <h3><%= @veterinary.user.first_name %>'s Services</h3>
+
+  <div class="d-flex justify-content-between">
+    <ul>
+      <% @veterinary.services.each do |service| %>
+        <li><%= service.name %></li>
+        <p><%= service.category %></p>
+        <p><%= service.fee %></p>
+        <%= link_to "See more", service_path(service), class: "btn btn-primary" %>
+      <% end %>
+    </ul>
+  </div>
+</div>
