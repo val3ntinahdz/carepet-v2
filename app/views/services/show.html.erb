@@ -1,0 +1,9 @@
+<div class="service-container mt-3">
+  <h1><%= @service.name %></h1>
+  <p><strong>Category: </strong><%= @service.category %></p>
+  <p><strong>Fee: </strong><%= @service.fee %></p>
+  <p><strong>Description: </strong><%= @service.description %></p>
+  <% if current_user %>
+    <%= link_to "Book Now", new_appointment_path(service_id: @service.id), class: "btn btn-primary" %>
+  <% end %>
+</div>

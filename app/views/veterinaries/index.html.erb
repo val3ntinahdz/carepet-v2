@@ -1,0 +1,15 @@
+<div class="veterinaries-container mt-3 p-5">
+  <h1>All Available Veterinaries</h1>
+
+  <% @veterinaries.each do |vet| %>
+    <div class="card w-75 m-3">
+      <%= link_to veterinary_path(vet) do %>
+        <div class="card-body">
+          <h3><strong><%= vet.user.first_name %> <%= vet.user.last_name %></strong></h3>
+          <p>Specialization: <%= vet.specialization %></p>
+          <p>Vet's DNI: <%= vet.dni %></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
